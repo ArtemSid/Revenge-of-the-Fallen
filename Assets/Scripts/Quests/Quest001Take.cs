@@ -27,6 +27,8 @@ public class Quest001Take : MonoBehaviour
         {
             if (theDistance <= 3)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 actionDisplay.SetActive(false);
                 actionText.SetActive(false);
                 UIQuest.SetActive(true);
