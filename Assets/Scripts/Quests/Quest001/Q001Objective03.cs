@@ -12,6 +12,8 @@ public class Q001Objective03 : MonoBehaviour
     public GameObject actionText;
     public GameObject theObjective;
     public GameObject chestBlock;
+    public GameObject questComplete;
+    public GameObject exMark;
 
     void Update()
     {
@@ -51,6 +53,8 @@ public class Q001Objective03 : MonoBehaviour
                 closeObjective = 3;
                 actionText.SetActive(false);
                 actionDisplay.SetActive(false);
+                exMark.SetActive(true);
+                questComplete.SetActive(true);
             }
         }
     }

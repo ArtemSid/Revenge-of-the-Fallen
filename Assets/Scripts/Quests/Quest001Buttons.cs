@@ -11,6 +11,9 @@ public class Quest001Buttons : MonoBehaviour
     public GameObject Objective01;
     public GameObject Objective02;
     public GameObject Objective03;
+    public GameObject exMark;
+    public GameObject theNotice;
+    public GameObject noticeTrigger;
 
     public void AcceptQuest()
     {
@@ -29,6 +32,10 @@ public class Quest001Buttons : MonoBehaviour
 
     IEnumerator SetQuestUI()
     {
+        exMark.SetActive(false);
+        theNotice.SetActive(false);
+        noticeTrigger.SetActive(false);
+
         activeQuestBox.GetComponent<Text>().text = "My first weapon";
         Objective01.GetComponent<Text>().text = "Reach the clearing in the wood";
         Objective02.GetComponent<Text>().text = "Open the chest";
@@ -45,6 +52,7 @@ public class Quest001Buttons : MonoBehaviour
         Objective03.SetActive(true);
         yield return new WaitForSeconds(9);
         activeQuestBox.SetActive(false);
+
         Objective01.SetActive(false);
         Objective02.SetActive(false);
         Objective03.SetActive(false);
