@@ -21,6 +21,8 @@ public class Q001Objective03 : MonoBehaviour
 
         if (closeObjective == 3)
         {
+            theObjective.SetActive(false);
+
             if (theObjective.transform.localScale.y <= 0.0f)
             {
                 closeObjective = 0;

@@ -3,7 +3,9 @@
 public class HeartCollect : MonoBehaviour
 {
     public int rotateSpeed;
+
     public AudioSource collectSound;
+
     public GameObject thisHeart;
 
     void Update()

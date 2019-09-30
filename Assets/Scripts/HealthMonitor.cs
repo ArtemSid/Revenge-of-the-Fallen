@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthMonitor : MonoBehaviour
 {
@@ -18,14 +19,21 @@ public class HealthMonitor : MonoBehaviour
     {
         internalHealth = healthValue;
 
+        if (healthValue <= 0)
+        {
+            SceneManager.LoadScene(1);
+        }
+
         if (healthValue == 1)
         {
             Heart1.SetActive(true);
+            Heart2.SetActive(false);
         }
 
         if (healthValue == 2)
         {
             Heart2.SetActive(true);
+            Heart3.SetActive(false);
         }
 
         if (healthValue == 3)

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Q001Objective01 : MonoBehaviour
 {
     public GameObject theObjective;
+
     public int closeObjective;
 
     void Update()

@@ -4,6 +4,7 @@ using UnityEngine;
 public class SwingSword : MonoBehaviour
 {
     public GameObject theSword;
+
     public int swordStatus;
 
     void Update()

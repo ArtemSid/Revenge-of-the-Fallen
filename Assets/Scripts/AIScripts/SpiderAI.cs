@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SpiderAI : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpiderAI : MonoBehaviour
     public GameObject theEnemy;
 
     public int attackTrigger;
+    public int dealingDamage;
     public float targetDistance;
     public float allowedRange = 40;
     public float enemySpeed;
@@ -39,8 +41,12 @@ public class SpiderAI : MonoBehaviour
 
         if (attackTrigger == 1)
         {
-            enemySpeed = 0;
-            theEnemy.GetComponent<Animation>().Play("attack");
+            if (dealingDamage == 0)
+            {
+                enemySpeed = 0;
+                theEnemy.GetComponent<Animation>().Play("attack");
+                StartCoroutine(TakingDamage());
+            }
         }
     }
 
@@ -52,5 +58,19 @@ public class SpiderAI : MonoBehaviour
     void OnTriggerExit()
     {
         attackTrigger = 0;
+    }
+    
+    IEnumerator TakingDamage()
+    {
+        dealingDamage = 2;
+        yield return new WaitForSeconds(0.5f);
+
+        if (SpiderEnemy.globalSpider != 6)
+        {
+            HealthMonitor.healthValue -= 1;
+        }
+
+        yield return new WaitForSeconds(0.4f);
+        dealingDamage = 0;
     }
 }
