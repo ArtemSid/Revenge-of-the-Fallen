@@ -48,6 +48,7 @@ public class Q001Objective03 : MonoBehaviour
         {
             if (theDistance <= 3)
             {
+                QuestManager.subQuestNumber = 3;
                 this.GetComponent<BoxCollider>().enabled = false;
                 fakeSword.SetActive(false);
                 realSword.SetActive(true);

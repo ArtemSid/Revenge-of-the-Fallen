@@ -25,6 +25,8 @@ public class Q001Objective01 : MonoBehaviour
 
     void OnTriggerEnter()
     {
+        QuestManager.subQuestNumber = 2;
+        GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(FinishObjective());
     }
 
